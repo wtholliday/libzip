@@ -13,15 +13,25 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/krzyzanowskim/OpenSSL", from: "1.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "libzip",
-            dependencies: [],
+            dependencies: ["OpenSSL"],
             path: ".",
+            exclude: ["lib/zip_source_file_win32.c",
+                      "lib/zip_source_file_win32.h",
+                      "lib/zip_source_file_win32_ansi.c",
+                      "lib/zip_source_file_win32_named.c",
+                      "lib/zip_source_file_win32_utf16.c",
+                      "lib/zip_source_file_win32_utf8.c",
+                      "lib/zip_random_win32.c",
+                      "lib/zip_random_uwp.c",
+                      "lib/zip_crypto_win.c",
+                      "lib/zip_algorithm_zstd.c"],
             sources: ["lib"],
             publicHeadersPath: "lib")
     ],
