@@ -31,7 +31,10 @@ let package = Package(
                       "lib/zip_random_win32.c",
                       "lib/zip_random_uwp.c",
                       "lib/zip_crypto_win.c",
-                      "lib/zip_algorithm_zstd.c"],
+                      "lib/zip_crypto_mbedtls.c",
+                      "lib/zip_crypto_gnutls.c",
+                      "lib/zip_algorithm_zstd.c",
+                      "lib/zip_algorithm_xz.c"],
             sources: ["lib"],
             publicHeadersPath: "lib")
     ],
